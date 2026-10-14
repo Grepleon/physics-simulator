@@ -1,3 +1,6 @@
+using System;
+namespace PhysicsSimulator.Math;
+
 class Vector{
     private double x, y, z;
     public Vector(){
@@ -11,26 +14,26 @@ class Vector{
         z = dz;
     }
 
-    public static Vector operator -(const Vector& a, const Vector& b){
+    public static Vector operator -(Vector a, Vector b){
         return Vector(a.x - b.x, a.y - b.y, a.z - b.z);
     }
-    public static Vector operator -(const Vector& a){
+    public static Vector operator -(Vector a){
         return Vector() - a;
     }
-    public static Vector operator +(const Vector& a, const Vector& b){
+    public static Vector operator +(Vector a, Vector b){
         return a - (-b);
     }
-    public static Vector operator *(const Vector& a, double k){
+    public static Vector operator *(Vector a, double k){
         return Vector(a.x * k, a.y * k, a.z * k);
     }
-    public static Vector operator *(double k, const Vector& a){
+    public static Vector operator *(double k, Vector a){
         return a * k;
     }
-    public static Vector operator /(const Vector& a, double k){
+    public static Vector operator /(Vector a, double k){
         return a * (1 / k);
     }
 
-    public static double Length(){
+    public double Length(){
         return (Math.Sqrt(x * x + y * y + z * z));
     }
 }
