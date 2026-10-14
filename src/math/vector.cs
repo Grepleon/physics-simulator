@@ -11,13 +11,13 @@ class Vector{
         z = dz;
     }
 
-    public static Vector operator-(const Vector& v){
-        return Vector(x - v.x, y - v.y, z - v.z);
+    public static Vector operator-(const Vector& a, const Vector& b){
+        return Vector(a.x - b.x, a.y - b.y, a.z - b.z);
     }
-    public static Vector operator-(){
-        return Vector() - *this;
+    public static Vector operator-(const Vector& a){
+        return Vector() - a;
     }
-    public static Vector operator+(const Vector& v){
-        return *this - (-v);
+    public static Vector operator+(const Vector& a, const Vector& b){
+        return a - (-b);
     }
 }
