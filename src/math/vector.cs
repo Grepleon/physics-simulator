@@ -11,13 +11,22 @@ class Vector{
         z = dz;
     }
 
-    public static Vector operator-(const Vector& a, const Vector& b){
+    public static Vector operator -(const Vector& a, const Vector& b){
         return Vector(a.x - b.x, a.y - b.y, a.z - b.z);
     }
-    public static Vector operator-(const Vector& a){
+    public static Vector operator -(const Vector& a){
         return Vector() - a;
     }
-    public static Vector operator+(const Vector& a, const Vector& b){
+    public static Vector operator +(const Vector& a, const Vector& b){
         return a - (-b);
+    }
+    public static Vector operator *(const Vector& a, double k){
+        return Vector(a.x * k, a.y * k, a.z * k);
+    }
+    public static Vector operator *(double k, const Vector& a){
+        return a * k;
+    }
+    public static Vector operator /(const Vector& a, double k){
+        return a * (1 / k);
     }
 }
