@@ -29,4 +29,8 @@ class Vector{
     public static Vector operator /(const Vector& a, double k){
         return a * (1 / k);
     }
+
+    public static double Length(){
+        return (Math.Sqrt(x * x + y * y + z * z));
+    }
 }
