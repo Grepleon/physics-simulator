@@ -1,7 +1,7 @@
 using System;
 namespace PhysicsSimulator.Maths;
 
-class Vector{
+public class Vector{
     private double x, y, z;
     public Vector(){
         x = 0;
@@ -30,6 +30,9 @@ class Vector{
         return a * k;
     }
     public static Vector operator /(Vector a, double k){
+        if (k == 0){
+            throw new Exception("division by zero.");
+        }
         return a * (1 / k);
     }
 
